@@ -4,4 +4,4 @@
 
 ### 데모
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a14a7a82-3d5c-42b1-b08a-56afd9e69756.png"/>
-<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/c9c0feb5-d948-464e-9e97-42f612014841.png"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/5707093b-9531-4c41-bd88-3d6efbeecf9d.png"/>
