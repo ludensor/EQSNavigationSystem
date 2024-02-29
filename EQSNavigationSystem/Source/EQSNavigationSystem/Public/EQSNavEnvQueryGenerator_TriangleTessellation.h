@@ -12,7 +12,7 @@
  * https://www.researchgate.net/figure/Equilateral-triangle-tessellation-packing-into-a-coverage-circle-R-976-m_fig4_220471434
  */
 UCLASS(meta = (DisplayName = "Points: Triangle Tessellation"))
-class ADVANCEDENVIRONMENTQUERY_API UEQSNavEnvQueryGenerator_TriangleTessellation final : public UEnvQueryGenerator_ProjectedPoints
+class EQSNAVIGATIONSYSTEM_API UEQSNavEnvQueryGenerator_TriangleTessellation final : public UEnvQueryGenerator_ProjectedPoints
 {
 	GENERATED_BODY()
 

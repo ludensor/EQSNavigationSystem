@@ -1,0 +1,25 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.EQSNavigationSystem.cpp.obj": [
+			"EQSNavAgentInterface.gen.cpp.obj",
+			"EQSNavBTTask_MoveTo.gen.cpp.obj",
+			"EQSNavEnvQueryContext_Destination.gen.cpp.obj",
+			"EQSNavEnvQueryGenerator_Hemisphere.gen.cpp.obj",
+			"EQSNavEnvQueryGenerator_TriangleTessellation.gen.cpp.obj",
+			"EQSNavEnvQueryGenerator_Voxel.gen.cpp.obj",
+			"EQSNavEnvQueryTest_AgentTrace.gen.cpp.obj",
+			"EQSNavigationSystem.init.gen.cpp.obj",
+			"EQSNavTypes.gen.cpp.obj",
+			"EQSNavAgentInterface.cpp.obj",
+			"EQSNavBTTask_MoveTo.cpp.obj",
+			"EQSNavEnvQueryContext_Destination.cpp.obj",
+			"EQSNavEnvQueryGenerator_Hemisphere.cpp.obj",
+			"EQSNavEnvQueryGenerator_TriangleTessellation.cpp.obj",
+			"EQSNavEnvQueryGenerator_Voxel.cpp.obj",
+			"EQSNavEnvQueryTest_AgentTrace.cpp.obj",
+			"EQSNavigationSystem.cpp.obj",
+			"EQSNavTypes.cpp.obj"
+		]
+	}
+}
