@@ -27,8 +27,6 @@ void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, 
     }
 }
 ```
-- AI의 위치에서 Target이 보이는지 검출합니다.
-
 ```cpp
 // Target이 보이는가?
 if (MyMemory->bVisibleDestination)
@@ -70,4 +68,9 @@ else
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/91de494f-6db0-432d-a257-b9eec57884d1.png" width="400" height="400"/>
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a8fb8822-40f8-481c-8b46-ea03d41232fb.png" width="400" height="400"/>
 
-- EQS에서 복셀을 생성하여 이동할 위치를 찾습니다.
+1. AI의 위치에서 목적지가 보이는지 검사합니다.
+2. 목적지가 보이면 그대로 이동하고 보이지 않으면, EQS를 실행합니다.
+3. 복셀 생성기에서 각 아이템의 필터링과 점수를 평가하여 아이템 위치 좌표를 얻습니다.
+4. 아이템 위치 좌표로 AI를 이동시킵니다.
+5. 2번 내용을 수행합니다.
+6. 목적지
