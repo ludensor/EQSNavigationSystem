@@ -7,6 +7,7 @@
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/6bd92a9e-764c-429f-bc06-32c0dc9b95b8.gif" width="400" height="400"/>
 
 ### 동작 원리
+#### 목표 지점 검사
 ```cpp
 void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, FEQSNavBTMoveToTaskMemory& NodeMemory)
 {
