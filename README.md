@@ -10,21 +10,21 @@
 ```cpp
 void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, FEQSNavBTMoveToTaskMemory& NodeMemory)
 {
-	...
-	if (AActor* MovingAgent = NodeMemory.MovementComponent->GetOwner())
-	{
-		...
-		if (MovingAgent->Implements<UEQSNavAgentInterface>())
-		{
-			// AI의 캡슐 사이즈를 가져옵니다.
-			IEQSNavAgentInterface* NavAgentInterface = Cast<IEQSNavAgentInterface>(MovingAgent);
-			NavAgentInterface->GetNavAgentProperties(AgentRadius, AgentHalfHeight);
-		}
-		...
-		// AI 위치에서 Target으로 SweepTest를 진행하여 보이는지 검출합니다.
-		NodeMemory.bVisibleDestination = !GetWorld()->SweepTestByChannel(
-			AgentLocation, GoalLocation, FQuat::Identity, ECC_Visibility, TraceShape, TraceParams);
-	}
+    ...
+    if (AActor* MovingAgent = NodeMemory.MovementComponent->GetOwner())
+    {
+        ...
+        if (MovingAgent->Implements<UEQSNavAgentInterface>())
+        {
+            // AI의 캡슐 사이즈를 가져옵니다.
+            IEQSNavAgentInterface* NavAgentInterface = Cast<IEQSNavAgentInterface>(MovingAgent);
+            NavAgentInterface->GetNavAgentProperties(AgentRadius, AgentHalfHeight);
+        }
+        ...
+	// AI 위치에서 Target으로 SweepTest를 진행하여 보이는지 검출합니다.
+	NodeMemory.bVisibleDestination = !GetWorld()->SweepTestByChannel(
+		AgentLocation, GoalLocation, FQuat::Identity, ECC_Visibility, TraceShape, TraceParams);
+    }
 }
 ```
 - AI의 위치에서 Target이 보이는지 검출합니다.
@@ -33,37 +33,37 @@ void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, 
 // Target이 보이는가?
 if (MyMemory->bVisibleDestination)
 {
-	MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
-	if (HasReachedDestination(*MyMemory))
-	{
-		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
-	}
-	else
-	{
-		// Target 방향으로 이동한다.
-		MyMemory->CurrentDestination = MyMemory->CurrentDestination = GetGoalLocation();
-		FollowPath(OwnerComp, *MyMemory);
-	}
+    MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
+    if (HasReachedDestination(*MyMemory))
+    {
+        FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+    }
+    else
+    {
+        // Target 방향으로 이동한다.
+        MyMemory->CurrentDestination = MyMemory->CurrentDestination = GetGoalLocation();
+        FollowPath(OwnerComp, *MyMemory);
+    }
 }
 else
 {
-	// Target의 위치를 찾을 수 없으므로 EQS 쿼리를 요청한다.
-	if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::Wait)
-	{
-		RequestQuery(OwnerComp, *MyMemory);
-	}
-	// EQS 쿼리 요청이 끝나면 쿼리를 통해 탐색된 위치로 이동합니다.
-	else if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::QueryFinished)
-	{
-		if (HasReachedEQSItemLocation(*MyMemory))
-		{
-			MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
-		}
-		else
-		{
-			FollowPath(OwnerComp, *MyMemory);
-		}
-	}
+    // Target의 위치를 찾을 수 없으므로 EQS 쿼리를 요청한다.
+    if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::Wait)
+    {
+        RequestQuery(OwnerComp, *MyMemory);
+    }
+    // EQS 쿼리 요청이 끝나면 쿼리를 통해 탐색된 위치로 이동합니다.
+    else if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::QueryFinished)
+    {
+        if (HasReachedEQSItemLocation(*MyMemory))
+        {
+            MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
+        }
+        else
+        {
+            FollowPath(OwnerComp, *MyMemory);
+        }
+    }
 }
 ```
 
