@@ -68,6 +68,7 @@ else
 
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/91de494f-6db0-432d-a257-b9eec57884d1.png" width="400" height="400"/>
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/a8fb8822-40f8-481c-8b46-ea03d41232fb.png" width="400" height="400"/>
+<img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/93a9412d-ec22-4249-86b9-91d44e817341.png"/>
 
 1. AI의 위치에서 목적지가 보이는지 검사합니다.
 2. 목적지가 보이면 그대로 이동하고 보이지 않으면, EQS를 실행합니다.
