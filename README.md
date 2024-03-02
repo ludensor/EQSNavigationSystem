@@ -31,14 +31,14 @@ void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, 
             NavAgentInterface->GetNavAgentProperties(AgentRadius, AgentHalfHeight);
         }
         ...
-	// AI 위치에서 Target으로 SweepTest를 진행하여 보이는지 검출합니다.
+	// AI 위치에서 목적지로 SweepTest를 진행하여 보이는지 검출합니다.
 	NodeMemory.bVisibleDestination = !GetWorld()->SweepTestByChannel(
 		AgentLocation, GoalLocation, FQuat::Identity, ECC_Visibility, TraceShape, TraceParams);
     }
 }
 ```
 ```cpp
-// Target이 보이는가?
+// 목적지로 이동할 수 있는지 확인합니다.
 if (MyMemory->bVisibleDestination)
 {
     MyMemory->EnvQueryStatus = EEQSNavEnvQueryStatus::Wait;
@@ -48,14 +48,14 @@ if (MyMemory->bVisibleDestination)
     }
     else
     {
-        // Target 방향으로 이동한다.
+        // 목적지 방향으로 이동합니다.
         MyMemory->CurrentDestination = GetGoalLocation();
         FollowPath(OwnerComp, *MyMemory);
     }
 }
 else
 {
-    // Target의 위치를 찾을 수 없으므로 EQS 쿼리를 요청한다.
+    // 목적지의 위치를 찾을 수 없으므로 EQS 쿼리를 요청합니다.
     if (MyMemory->EnvQueryStatus == EEQSNavEnvQueryStatus::Wait)
     {
         RequestQuery(OwnerComp, *MyMemory);
