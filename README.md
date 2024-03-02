@@ -1,6 +1,6 @@
 # EQSNavigationSystem
 
-EQSNavigationSystem은 UnrealEngine에서 제공되는 기능인 EQS를 이용한 3차원 내비게이션 시스템 모듈입니다.
+EQSNavigationSystem은 UnrealEngine에서 제공하는 기능인 EQS를 이용한 3차원 내비게이션 시스템 모듈입니다.
 플러그인 형태로 제작되어 소스코드를 다운로드하고 플러그인을 활성화하면 바로 사용할 수 있습니다.
 
 ## 데모
