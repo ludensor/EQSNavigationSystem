@@ -40,7 +40,7 @@ if (MyMemory->bVisibleDestination)
     else
     {
         // Target 방향으로 이동한다.
-        MyMemory->CurrentDestination = MyMemory->CurrentDestination = GetGoalLocation();
+        MyMemory->CurrentDestination = GetGoalLocation();
         FollowPath(OwnerComp, *MyMemory);
     }
 }
