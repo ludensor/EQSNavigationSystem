@@ -15,7 +15,7 @@ EQSNavigationSystem은 UnrealEngine에서 제공하는 기능인 EQS를 이용�
 ### Sample Codes
 
 AI가 목표지점으로 도달하기 위한 과정 중 일부 소스코드입니다. 첫 번째 코드는 길 찾기 수행 없이 목적지로 바로 이동 가능한지 판별합니다.
-두 번째 코드는 목적지로 바로 이동이 불가능하면 EQS 쿼리를 요청하여 다음 이동 위치 좌표를 얻어낸 후 이동합니다.
+두 번째 코드는 목적지로 바로 이동이 불가능하면 EQS 쿼리를 요청하여 다음 위치 좌표를 얻어낸 후 이동합니다.
 
 ```cpp
 void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, FEQSNavBTMoveToTaskMemory& NodeMemory)
