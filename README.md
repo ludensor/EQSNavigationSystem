@@ -5,7 +5,7 @@ EQSNavigationSystem은 UnrealEngine에서 제공되는 기능인 EQS를 이용�
 
 ## 데모
 
-다음은 EQSNavigationSystem을 사용하여 길 찾기를 수행하는 예시입니다. 예시 레벨은 마켓 플레이스에서 구매한 환경에서 테스트 되었습니다.
+다음은 EQSNavigationSystem을 사용하여 길 찾기를 수행하는 예시입니다. 예시 레벨은 마켓 플레이스에서 구매한 환경 레벨에서 테스트 되었습니다.
 
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/1ccd34ba-6203-4256-94eb-b5fc11236c07.gif" width="400" height="400"/>
 <img src="https://github.com/ludensor/EQSNavigationSystem/assets/76856672/6bd92a9e-764c-429f-bc06-32c0dc9b95b8.gif" width="400" height="400"/>
@@ -14,7 +14,8 @@ EQSNavigationSystem은 UnrealEngine에서 제공되는 기능인 EQS를 이용�
 
 ### Sample Codes
 
-AI가 목표지점으로 도달하기 위한 과정 중 일부 소스코드입니다. 
+AI가 목표지점으로 도달하기 위한 과정 중 일부 소스코드입니다. 첫 번째 코드는 길 찾기 수행 없이 목적지로 바로 이동 가능한지 판별합니다.
+두 번째 코드는 목적지로 바로 이동이 불가능하면 EQS 쿼리를 요청하여 다음 이동 위치 좌표를 얻어낸 후 이동합니다.
 
 ```cpp
 void UEQSNavBTTask_MoveTo::UpdateDestination(UBehaviorTreeComponent& OwnerComp, FEQSNavBTMoveToTaskMemory& NodeMemory)
